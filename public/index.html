@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Serie04</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Seção do upload de arquivo</h1>
+  <p>Selecione um arquivo para upload:</p>
+  <form action="/file_upload" method="POST"
+   enctype="multipart/form-data">
+    <input type="file" name="arq"> <br>
+    <input type="submit" value="Enviar">
+  </form>
+  <h1>Seção do formulário get</h1>
+  <form action="/form_get" method="GET">
+    Item 1: <input type="text" name="item1"> <br>
+    Item 2: <input type="text" name="item2"> <br>
+    <input type="submit" value="Enviar">
+  </form>
+  <h1>Seção do AJAX</h1>
+  <p id="ajax_placeholder">placeholder</p>
+  <button id="ajax_button">Clique aqui para ajax</button>
+  <script>
+    $(document).ready( () => {
+      $('#ajax_button').click( () => {
+        $('#ajax_placeholder').load('/ajax_json.json');
+      });
+    });
+  </script>
+</body>
+</html>
